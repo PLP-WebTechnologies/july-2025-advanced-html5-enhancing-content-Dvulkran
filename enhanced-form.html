@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML5 Showcase: Lists, Tables, Media & Form</title>
+    <meta name="description"
+        content="A semantic HTML5 page demonstrating lists, tables, media, and a fully validated form using native HTML features only." />
+</head>
+
+<body>
+    <header>
+        <h1>HTML5 Showcase</h1>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#catalog">Catalog Table</a></li>
+                <li><a href="#media">Media</a></li>
+                <li><a href="#contact">Form</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section id="overview" aria-labelledby="overview-title">
+            <h2 id="overview-title">Overview</h2>
+            <p>
+                This page demonstrates well-structured content with lists, a data
+                table, rich media, and a complete HTML5 form with native validation.
+            </p>
+
+            <h3>Key Features</h3>
+            <ul>
+                <li><strong>Lists</strong> for organized information</li>
+                <li><strong>Tables</strong> with proper headers and caption</li>
+                <li><strong>Media</strong> elements: image, audio, and video</li>
+                <li><strong>Form</strong> with labels, fieldsets, and validation</li>
+            </ul>
+
+            <h3>Setup Steps</h3>
+            <ol>
+                <li>Review the content sections below.</li>
+                <li>Interact with the media elements.</li>
+                <li>Complete and submit the form.</li>
+            </ol>
+
+            <h3>Terminology</h3>
+            <dl>
+                <dt><abbr title="HyperText Markup Language">HTML</abbr></dt>
+                <dd>The language used to structure content on the web.</dd>
+                <dt>Semantic tags</dt>
+                <dd>Elements that convey meaning and structure to content.</dd>
+            </dl>
+        </section>
+
+        <section id="catalog" aria-labelledby="catalog-title">
+            <h2 id="catalog-title">Catalog Table</h2>
+            <p>Sample data table with headers, caption, and totals.</p>
+            <table>
+                <caption>Sample Product Catalog</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">SKU</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">In Stock</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">P-100</th>
+                        <td>Widget A</td>
+                        <td>42</td>
+                        <td><data value="19.99">$19.99</data></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">P-200</th>
+                        <td>Widget B</td>
+                        <td>18</td>
+                        <td><data value="29.5">$29.50</data></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">P-300</th>
+                        <td>Gadget C</td>
+                        <td>7</td>
+                        <td><data value="49.0">$49.00</data></td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Total SKUs</td>
+                        <td>3</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <section id="media" aria-labelledby="media-title">
+            <h2 id="media-title">Media</h2>
+            <figure>
+                <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=1200&q=80&auto=format&fit=crop"
+                    alt="Sunlit flower close-up" width="300" height="200" />
+                <figcaption>Example image (from Unsplash).</figcaption>
+            </figure>
+
+            <figure>
+                <audio controls preload="metadata">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                        type="audio/mpeg" />
+                    Your browser does not support the audio element.
+                </audio>
+                <figcaption>Audio sample.</figcaption>
+            </figure>
+
+            <figure>
+                <video controls preload="metadata" width="480"
+                    poster="https://peach.blender.org/wp-content/uploads/title_anouncement.jpg?x11217">
+                    <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                        type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                <figcaption>Video sample.</figcaption>
+            </figure>
+
+            <details>
+                <summary>More info</summary>
+                <p>
+                    Published on <time datetime="2025-07-01">July 1, 2025</time>.
+                </p>
+            </details>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact & Order Form</h2>
+            <p>Fields marked with <strong>*</strong> are required.</p>
+
+            <form action="https://httpbin.org/post" method="post" autocomplete="on">
+                <fieldset>
+                    <legend>Account</legend>
+                    <label for="username">Username *</label>
+                    <input id="username" name="username" type="text" required minlength="3" maxlength="16" placeholder="jane_doe" />
+
+                    <label for="password">Password *</label>
+                    <input id="password" name="password" type="password" required minlength="8" placeholder="At least 8 characters" />
+                </fieldset>
+
+                <fieldset>
+                    <legend>Address</legend>
+                    <label for="address-line1">Address *</label>
+                    <input id="address-line1" name="address-line1" type="text" required placeholder="123 Main St" />
+
+                    <label for="city">City *</label>
+                    <input id="city" name="city" type="text" required placeholder="Nairobi" list="city-suggestions" />
+                    <datalist id="city-suggestions">
+                        <option value="Nairobi"></option>
+                        <option value="Mombasa"></option>
+                        <option value="Kisumu"></option>
+                        <option value="Nakuru"></option>
+                    </datalist>
+
+                    <label for="country">Country *</label>
+                    <select id="country" name="country" required>
+                        <option value="">Select...</option>
+                        <option value="KE">Kenya</option>
+                        <option value="UG">Uganda</option>
+                        <option value="TZ">Tanzania</option>
+                        <option value="GB">UK</option>
+                        <option value="DE">Germany</option>
+                        <option value="FR">France</option>
+                    </select>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Preferences</legend>
+                    <label>Contact method *</label>
+                    <input type="radio" id="contact-email" name="contact-method" value="email" required />
+                    <label for="contact-email">Email</label>
+                    <input type="radio" id="contact-phone" name="contact-method" value="phone" />
+                    <label for="contact-phone">Phone</label>
+
+                    <label for="newsletter">
+                        <input type="checkbox" id="newsletter" name="newsletter" value="yes" checked />
+                        Subscribe to newsletter
+                    </label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Confirm</legend>
+                    <label>
+                        <input type="checkbox" id="terms" name="terms" required />
+                        I agree to the terms *
+                    </label>
+                </fieldset>
+
+                <button type="submit">Submit</button>
+            </form>
+
+            <address>
+                Example Co., PO Box 12345, Nairobi, KE
+            </address>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <time datetime="2025">2025</time> Example Co.</p>
+    </footer>
+</body>
+
+</html>
